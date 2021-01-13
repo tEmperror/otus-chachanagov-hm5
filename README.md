@@ -2,7 +2,7 @@
 ### Диаграма
 ![Diagram](Auth%20diagram.png)
 
-###Установка приложений
+Установка приложений
 
 ```
 helm install app app-chart/
