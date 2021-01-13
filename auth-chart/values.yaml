@@ -1,0 +1,23 @@
+replicaCount: 1
+
+deployment:
+  name: auth-deployment
+  image:
+    repo: temperror/otus-chachanagov-hm:5-auth
+    pullPolicy: Always
+  label: auth-java
+  initContainer:
+    name: init-pg
+    image: busybox
+  container:
+    name: auth-pod-java
+    portName: web
+    port: 80
+
+service:
+  name: auth-service
+  label: auth-service-label
+  type: NodePort
+  protocol: TCP
+  portName: service-web
+  port: 8000
